@@ -16,6 +16,7 @@ public void start(Stage stage) throws Exception {
     Parent splash = FXMLLoader.load(getClass().getResource("/fxml/splash.fxml"));
     Scene splashScene = new Scene(splash);
     stage.setScene(splashScene);
+    stage.setMaximized(true); // Agrandit la fenêtre à la taille de l'écran
     stage.show();
 
     PauseTransition delay = new PauseTransition(Duration.seconds(3));

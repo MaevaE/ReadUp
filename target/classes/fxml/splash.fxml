@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 
 <VBox xmlns:fx="http://javafx.com/fxml"
-      alignment="CENTER" spacing="30" prefWidth="800" prefHeight="600"
+      alignment="CENTER" spacing="50" prefWidth="1000" prefHeight="900"
       style="-fx-background-color: #1E1E2F;"
       >
 
