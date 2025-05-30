@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.StackPane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      alignment="CENTER" spacing="30" prefWidth="800" prefHeight="600"
+      style="-fx-background-color: #1E1E2F;"
+      >
+
+    <HBox alignment="CENTER" spacing="10">
+    <StackPane>
+        <Circle radius="60" fill="#3498db"/>
+        <Text text="R" style="-fx-font-size: 66px; -fx-fill: white; -fx-font-family: 'Segoe UI Black';"/>
+    </StackPane>
+
+    <Text text="Read-up" style="-fx-font-size: 110px; -fx-fill: white; -fx-font-family: 'Roboto ExtraBold'; "/>
+        
+    </HBox>
+    <ProgressIndicator fx:id="progressIndicator" />
+</VBox>
