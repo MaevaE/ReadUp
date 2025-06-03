@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
@@ -21,7 +22,7 @@
    <!-- Top dynamique -->
     <top>
         <StackPane fx:id="topPane" style="-fx-background-color: #3A86FF;" prefHeight="40">
-             <Label fx:id="titleLabel" text="Bienvenue Dans ReadUp !" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-family: 'Roboto-Bold';" />
+             <Label fx:id="titleLabel" text="Bienvenue Dans ReadUp !" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-family: 'Roboto-Bold'; -fx-font-weight: bold;" />
         </StackPane>
     </top>
 
@@ -47,7 +48,7 @@
             <Button prefWidth="270" prefHeight="50" onAction="#goToDashboard" style="-fx-background-color: #3A86FF;" fx:id="DashboardButton" >
                 <graphic>
                 <HBox alignment="CENTER_LEFT" spacing="10">
-                  <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                 <FontIcon iconLiteral="fas-tachometer-alt" iconSize="24" iconColor="white"/>
                   <Label text="Dashboard" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
                 </HBox>
                 </graphic>
@@ -58,7 +59,7 @@
             <Button onAction="#goToLivres"  prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="EmpruntButton">
                 <graphic>
                     <HBox alignment="CENTER_LEFT" spacing="10">
-                       <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                       <FontIcon iconLiteral="fas-archive" iconSize="24"  iconColor="white"/>
                        <Label text="Emprunter/Retourner" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
                     </HBox>
                 </graphic>
@@ -68,7 +69,7 @@
             <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="ClientButton">
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
-                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                             <FontIcon iconLiteral="fas-users" iconSize="24" iconColor="white" />
                              <Label text="Informations Clients" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
                            </HBox>
                         </graphic>
@@ -78,7 +79,7 @@
               <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="LivreButton" >
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
-                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                             <FontIcon iconLiteral="fas-book" iconSize="24"  iconColor="white"/>
                              <Label text="Informations Livres" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
                            </HBox>
                         </graphic>
@@ -88,17 +89,17 @@
               <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="ParametreButton">
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
-                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                             <FontIcon iconLiteral="fas-cog" iconSize="24" iconColor="white" />
                              <Label text="Parametres" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
                            </HBox>
                         </graphic>
             </Button>
 
 
-             <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="AboutButton">
+             <Button  onAction="#goToAbout" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="AboutButton">
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
-                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF; " />
+                             <FontIcon iconLiteral="fas-info-circle" iconSize="24" iconColor="white" />
                              <Label text="A Propos" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
                            </HBox>
                         </graphic>

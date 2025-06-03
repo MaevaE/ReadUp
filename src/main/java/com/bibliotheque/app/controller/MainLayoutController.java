@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import java.io.IOException;
 import javafx.scene.control.*;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 
 
 
@@ -41,6 +43,9 @@ private Label titleLabel;
     @FXML
     //action de click sur les boutons de la home
     public void initialize() {
+
+
+                   
         
         DashboardButton.setOnMousePressed(e -> DashboardButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
         DashboardButton.setOnMouseReleased(e -> DashboardButton.setStyle("-fx-background-color: #3A86FF;"));
@@ -83,6 +88,12 @@ private Label titleLabel;
     private void goToUtilisateurs() {
        setContent("/fxml/Utilisateurs.fxml");
        titleLabel.setText("Informations Clients");
+    }
+
+       @FXML
+    private void goToAbout() {
+       setContent("/fxml/About.fxml");
+       titleLabel.setText("A Propos");
     }
 
     

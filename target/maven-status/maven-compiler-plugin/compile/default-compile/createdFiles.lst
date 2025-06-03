@@ -1,4 +1,5 @@
 com/bibliotheque/app/dao/UtilisateursDao.class
+com/bibliotheque/app/controller/AboutController.class
 com/Readup/app/App.class
 com/bibliotheque/app/dao/Database.class
 com/bibliotheque/app/model/UtilisateursModel.class

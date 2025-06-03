@@ -5,18 +5,19 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.bibliotheque.app.controller.UtilisateursController"  xmlns="http://javafx.com/javafx/17"
-       alignment="CENTER"
-      style="-fx-background-color:rgb(235, 235, 238);">
+       alignment="TOP_LEFT"
+       spacing="10"
+      style="-fx-background-color:rgb(235, 235, 238);-fx-padding: 20;">
 
       <HBox  alignment="CENTER_RIGHT" spacing="10">
-      <TextField fx:id="champRecherche" promptText="Rechercher un utilisateur..."  style="-fx-pref-width: 400px;-fx-font-size: 14px; -fx-pref-height: 50px;"/>
+      <TextField fx:id="champRecherche" promptText="Rechercher un utilisateur..."  style="-fx-pref-width: 400px;-fx-font-size: 14px; -fx-pref-height: 30px;"/>
       <Button  fx:id="btnRefresh" text="Rafraichir" onAction="#handleRefresh" style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"        />
       </HBox>
 
-    <HBox  style="-fx-background-color:rgb(235, 235, 238); -fx-padding: 10;" alignment="CENTER">
+    <HBox  style="-fx-background-color:rgb(235, 235, 238); -fx-padding: 10;" alignment="CENTER"  prefHeight="900">
 
       <!--FORMULAIRE DES CLIENTS-->
-        <VBox spacing="40" style='-fx-background-color: #1E1E2F ; -fx-padding: 20; ' >
+        <VBox spacing="40" style='-fx-background-color: #1E1E2F ; -fx-padding: 20; ' prefWidth="500" prefHeight="550">
 
         <TextField fx:id="txtNom" promptText="Noms" style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
         <TextField fx:id="txtPrenom" promptText="Prenoms" style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
@@ -39,12 +40,13 @@
     <VBox spacing="10"
       alignment="CENTER"
       style="-fx-background-color:rgb(45, 45, 71); -fx-padding: 20;"
-      prefWidth="700" prefHeight="400">
+      prefWidth="700" prefHeight="550">
 
 
     <TableView fx:id="tableUtilisateur"
                VBox.vgrow="ALWAYS"
-               prefHeight="300"
+               prefWidth="700" prefHeight="350"
+               
                style="
                -fx-background-color: #1E1E2F;
                     -fx-text-fill: white;

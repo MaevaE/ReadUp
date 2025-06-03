@@ -55,6 +55,22 @@
     <artifactId>mysql-connector-j</artifactId>
     <version>8.0.33</version>
 </dependency>
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-fontawesome</artifactId>
+    <version>4.7.0-9.1.2</version>
+</dependency>
+
+
+    <!-- JUnit 4 pour exécuter AppTest.java -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+</dependency>
+
+
 
     
     

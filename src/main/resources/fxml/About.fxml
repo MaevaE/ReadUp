@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bibliotheque.app.controller.AboutController"
+      alignment="CENTER"
+      spacing="10"
+      style="-fx-background-color:  #1E1E2F; -fx-padding: 20;">
+    
+    <VBox spacing="8" style="-fx-background-color: #1E1E2F; -fx-padding: 20;" alignment="CENTER">
+        
+        <!-- Titre -->
+        <Label text="À propos de ReadUp"
+               style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+
+        <!-- Description -->
+        <Text text="ReadUp est une application de gestion de bibliothèque conçue pour faciliter l'organisation, l’emprunt et le retour de livres dans les établissements. Elle offre une interface intuitive pour les bibliothécaires et permet un suivi clair des opérations courantes."
+              wrappingWidth="600"
+              style="-fx-fill: white; -fx-font-size: 16px; -fx-text-alignment: center;" />
+        
+        <!-- Version -->
+        <Text text="Version : 1.0.0"
+              style="-fx-fill: white; -fx-font-size: 16px;" />
+
+        <!-- Développeur -->
+        <Text text="Développé par : Groupe 1"
+              style="-fx-fill: white; -fx-font-size: 16px;" />
+
+        <!-- Équipe -->
+        <Text text="Équipe du projet :"
+              style="-fx-fill: white; -fx-font-size: 16px; -fx-underline: true;" />
+        <Text text=" - Maeva (Lead développeuse,Interface graphique)" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Zidane (développeuse,Interface graphique)" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Ange (Test et documentation)" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Muscade (Tests et documentation)" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Muscade (conception de la DB)" style="-fx-fill: white; -fx-font-size: 14px;" />
+
+        
+        <!-- Technologies -->
+        <Text text="Technologies utilisées :"
+              style="-fx-fill: white; -fx-font-size: 16px; -fx-underline: true;" />
+        <Text text=" - Java 17" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - JavaFX" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Maven" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - MySQL" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Git / GitHub" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Figma" style="-fx-fill: white; -fx-font-size: 14px;" />
+
+        <!-- Lien GitHub -->
+        <Text text="Code source : https://github.com/MaevaE/ReadUp"
+              wrappingWidth="600"
+              style="-fx-fill: white; -fx-font-size: 14px; -fx-underline: true;" />
+
+        <!-- Contact -->
+        <Text text="Contact : maevaewolo749@example.com"
+              style="-fx-fill: white; -fx-font-size: 16px;" />
+
+    </VBox>
+</VBox>

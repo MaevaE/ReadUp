@@ -1,5 +1,6 @@
 /home/maeva/Readup-app/src/main/java/com/bibliotheque/app/controller/SplashController.java
 /home/maeva/Readup-app/src/main/java/com/bibliotheque/app/controller/DashboardController.java
+/home/maeva/Readup-app/src/main/java/com/bibliotheque/app/controller/AboutController.java
 /home/maeva/Readup-app/src/main/java/com/bibliotheque/app/App.java
 /home/maeva/Readup-app/src/main/java/com/bibliotheque/app/controller/MainLayoutController.java
 /home/maeva/Readup-app/src/main/java/com/bibliotheque/app/dao/UtilisateursDao.java
