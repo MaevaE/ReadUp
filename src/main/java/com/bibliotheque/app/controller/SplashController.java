@@ -28,7 +28,7 @@ public class SplashController {
 
     private void ouvrirFenetrePrincipale() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/livre.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/MainLayout.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Liste des Livres");
             stage.setScene(new Scene(root, 400, 300));

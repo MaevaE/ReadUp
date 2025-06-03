@@ -1,2 +1,8 @@
+com/bibliotheque/app/dao/UtilisateursDao.class
 com/Readup/app/App.class
+com/bibliotheque/app/dao/Database.class
+com/bibliotheque/app/model/UtilisateursModel.class
+com/bibliotheque/app/controller/DashboardController.class
+com/bibliotheque/app/controller/UtilisateursController.class
+com/bibliotheque/app/controller/MainLayoutController.class
 com/Readup/app/controller/SplashController.class

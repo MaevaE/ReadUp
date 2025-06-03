@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx/17"
+            xmlns:ikonli="http://kordamp.org/ikonli/javafx"
+            fx:controller="com.bibliotheque.app.controller.MainLayoutController"
+            prefWidth="1000" prefHeight="700"
+            style="-fx-background-color: #FFFFFF;"
+            fx:id="mainPane">
+
+   
+
+
+   <!-- Top dynamique -->
+    <top>
+        <StackPane fx:id="topPane" style="-fx-background-color: #3A86FF;" prefHeight="40">
+             <Label fx:id="titleLabel" text="Bienvenue Dans ReadUp !" style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-family: 'Roboto-Bold';" />
+        </StackPane>
+    </top>
+
+
+    <!-- Barre latérale -->
+    <left>
+        <VBox spacing="30" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="menuVBox" prefWidth="300">
+            <padding>
+                <Insets top="0" right="0" bottom="0" left="0"/>
+            </padding>
+            <ImageView fitWidth="290" fitHeight="200" preserveRatio="true">
+               <image>
+                  <Image url="/images/jeune-etudiant-travaillant-sur-affectation.jpg" />
+                </image>
+          </ImageView>
+          <VBox spacing="10" style="-fx-background-color: #FFFFFF;">
+                <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+         
+
+
+            <Button prefWidth="270" prefHeight="50" onAction="#goToDashboard" style="-fx-background-color: #3A86FF;" fx:id="DashboardButton" >
+                <graphic>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                  <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                  <Label text="Dashboard" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
+                </HBox>
+                </graphic>
+           </Button>
+
+
+            
+            <Button onAction="#goToLivres"  prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="EmpruntButton">
+                <graphic>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                       <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                       <Label text="Emprunter/Retourner" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
+                    </HBox>
+                </graphic>
+            </Button>
+
+
+            <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="ClientButton">
+                        <graphic>
+                          <HBox alignment="CENTER_LEFT" spacing="10">
+                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                             <Label text="Informations Clients" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
+                           </HBox>
+                        </graphic>
+            </Button>
+
+
+              <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="LivreButton" >
+                        <graphic>
+                          <HBox alignment="CENTER_LEFT" spacing="10">
+                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                             <Label text="Informations Livres" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
+                           </HBox>
+                        </graphic>
+            </Button>
+
+
+              <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="ParametreButton">
+                        <graphic>
+                          <HBox alignment="CENTER_LEFT" spacing="10">
+                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF;" />
+                             <Label text="Parametres" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
+                           </HBox>
+                        </graphic>
+            </Button>
+
+
+             <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="AboutButton">
+                        <graphic>
+                          <HBox alignment="CENTER_LEFT" spacing="10">
+                             <FontIcon iconLiteral="fas-search" iconSize="30" style="-fx-fill: #FFFFFF; " />
+                             <Label text="A Propos" style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-family:'Roboto-Regular';" />
+                           </HBox>
+                        </graphic>
+            </Button>
+            
+          </VBox>
+        </VBox>
+    </left>
+
+    <!-- Contenu dynamique -->
+    <center>
+        <StackPane fx:id="contentPane" />
+    </center>
+</BorderPane>

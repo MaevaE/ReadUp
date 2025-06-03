@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Pos?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="20">
+    <Label text="Gestion des Livres 📚" style="-fx-font-size: 24px;" />
+</VBox>
