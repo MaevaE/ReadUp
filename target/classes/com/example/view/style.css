@@ -1,0 +1,188 @@
+/* src/main/resources/com/example/view/style.css */
+
+/* Couleurs de base basées sur la photo "Desktop - 4.jpg" */
+/* Un bleu très foncé, presque noir, pour les fonds des conteneurs principaux */
+.dark-blue-bg {
+    -fx-background-color: #1a2035; /* Basé sur l'image fournie */
+}
+
+/* Un bleu plus clair pour la barre d'en-tête et les boutons d'action */
+.light-blue-accent {
+    -fx-background-color: #3498db; /* Un bleu vif */
+}
+
+/* Style général de la fenêtre principale */
+.root {
+    -fx-background-color: #f0f2f5; /* Fond clair pour l'arrière-plan général de la fenêtre */
+}
+
+/* Styles pour la barre latérale gauche (le panneau bleu foncé) */
+.sidebar {
+    -fx-background-color: #2c3e50; /* Bleu très foncé pour la sidebar */
+}
+
+/* Styles des boutons de navigation dans la sidebar */
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0 0 0 20px;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #34495e;
+}
+
+/* Style spécifique pour le bouton actif */
+.sidebar-button-active {
+    -fx-background-color: #34495e;
+}
+
+/* Styles pour la barre d'en-tête (le bandeau bleu clair en haut) */
+.header-bar {
+    -fx-background-color: #3A86FF; /* Bleu vif pour l'en-tête */
+    -fx-alignment: CENTER; /* Centré comme demandé */
+}
+.main-content {
+    -fx-background-color: #1E1E2F; /* MAJ : Bleu très foncé comme sur l'image */
+}
+
+/* Styles pour le panneau principal de contenu (le grand espace bleu foncé à droite) */
+.main-content-pane {
+    -fx-background-color: #cccccc; 
+    -fx-margin:50%
+
+}
+
+/* Styles pour le conteneur du formulaire (le cadre bleu foncé avec les champs) */
+.form-container {
+    -fx-background-color: #00000017; /* MAJ : Bleu très foncé, comme le fond principal */
+    -fx-border-color: #00000016;/* Bordure fine grise pour la séparation visuelle */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 15px 15px 0 5px;
+    -fx-margin:10px
+}
+
+/* Styles des champs de saisie (TextField, TextArea) pour avoir des TRAITS avec SHADOW */
+.line-field {
+    -fx-background-color: transparent; /* Fond transparent */
+    -fx-border-color: transparent transparent #555555 transparent; /* Bordure uniquement en bas, couleur plus foncée pour trait */
+    -fx-border-width: 0 0 1px 0; /* Épaisseur du trait */
+    -fx-padding: 5px 0;
+    -fx-text-fill: white; /* Texte blanc pour contraste avec le fond foncé */
+    -fx-highlight-text-fill: black; /* Texte sélectionné noir */
+    -fx-highlight-fill: #ADD8E6; /* Fond sélectionné bleu clair */
+}
+
+.line-field:focused {
+    -fx-border-color: transparent transparent #3498db transparent; /* Trait bleu vif au focus */
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.5), 10, 0, 0, 0); /* Ombre bleue plus prononcée au focus */
+}
+
+
+.line-area {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #555555 transparent; /* Bordure uniquement en bas */
+    -fx-border-width: 0 0 1px 0; /* Épaisseur du trait */
+    -fx-padding: 5px 0;
+    -fx-wrap-text: true;
+    -fx-text-fill: white; /* Texte blanc pour contraste avec le fond foncé */
+    -fx-highlight-text-fill: black; /* Texte sélectionné noir */
+    -fx-highlight-fill: #ADD8E6; /* Fond sélectionné bleu clair */
+}
+
+.line-area:focused {
+    -fx-border-color: transparent transparent #3498db transparent; /* Trait bleu vif au focus */
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.5), 10, 0, 0, 0); /* Ombre bleue plus prononcée au focus */
+}
+
+/* Effet d'ombre pour les lignes des champs de saisie, mais moins prononcé */
+.shadow-line {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 1); /* Ombre très légère sous le trait */
+}
+
+
+/* Styles des étiquettes (Label) du formulaire */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bbbbbb; /* Texte gris clair pour la lisibilité sur fond foncé */
+    -fx-padding: 5px 0 0 0;
+}
+
+/* Styles des boutons Ajouter, Supprimer, Modifier (TOUS bleus, comme demandé) */
+.action-button {
+    -fx-background-color: #3498db; /* Un bleu vif, cohérent */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 15px;
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9; /* Un bleu légèrement plus foncé au survol */
+}
+
+/* Effet d'ombre pour les cadres (formulaire et table) */
+.shadow-effect {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0, 0, 7); /* Ombre plus prononcée pour ces blocs */
+}
+
+/* Styles pour la TableView (la liste des livres) */
+.table-view {
+    -fx-background-color: #1E1E2F; /* MAJ : Fond bleu foncé pour la table */
+    -fx-border-color: none;
+    -fx-border-radius: 5px;
+
+}
+
+/* Styles de l'en-tête de la table (les titres des colonnes) */
+.table-view .column-header-background {
+    -fx-background-color: #1E1E2F; /* MAJ : Bleu foncé pour les en-têtes */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #000000; /* Texte blanc pour les en-têtes */
+    -fx-font-weight: bold;
+}
+
+/* Style des cellules de la table */
+.table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, #1E1E2F; /* Fond bleu foncé pour les lignes */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2980b9; /* Bleu clair pour la ligne sélectionnée */
+    -fx-table-cell-border-color: #2980b9;
+}
+
+.table-cell {
+    -fx-text-fill: #FFFFFF; /* Texte gris clair pour les cellules de la table */
+    -fx-border-color: transparent;
+    -fx-padding: 5px 8px;
+}
+
+/* Style du champ de recherche */
+.search-field {
+    -fx-background-color: #dddddd; /* MAJ : Couleur plus foncée pour le fond du champ */
+    -fx-border-color: transparent transparent #cac7c7 transparent; /* Bordure inférieure */
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-radius: 20px; /* Pas de coins arrondis pour le trait */
+    -fx-padding: 5px 10px;
+    -fx-text-fill: rgb(0, 0, 0, 0.3); /* Texte blanc */
+    -fx-prompt-text-fill: #bbbbbb; /* Texte de prompt gris clair */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 1); /* Ombre légère */
+}
+
+/* Style des boutons avec icônes (recherche, rafraîchissement) */
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.icon-button:hover {
+    -fx-opacity: 0.8;
+}

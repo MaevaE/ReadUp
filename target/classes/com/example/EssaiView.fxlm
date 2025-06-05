@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+
+//<HBox prefHeight="600.0" prefWidth="1000.0" styleClass="root-hbox" stylesheets="@base_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.EmptyController">
+
+    <VBox prefWidth="200.0" HBox.hgrow="NEVER" styleClass="sidebar-empty">
+        <Label text="Menu" styleClass="sidebar-title">
+            <padding><Insets top="20" bottom="20" left="20" right="20"/></padding>
+        </Label>
+        </VBox>
+
+    <VBox HBox.hgrow="ALWAYS" styleClass="main-content-empty">
+        <HBox prefHeight="60.0" VBox.vgrow="NEVER" styleClass="top-bar-empty">
+            <Label text="Titre de la Page" styleClass="page-title">
+                 <HBox.margin><Insets left="20" right="20" top="10" bottom="10"/></HBox.margin>
+            </Label>
+            </HBox>
+
+        <VBox VBox.vgrow="ALWAYS" styleClass="work-area-empty">
+            <Label text="Bienvenue sur votre interface !" styleClass="welcome-text"/>
+        </VBox>
+    </VBox>
+
+</HBox>
