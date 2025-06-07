@@ -12,9 +12,10 @@ import java.util.List;
 
 public class LivreDAO {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/bibliotheque_bd";
+    private static final String URL = "jdbc:mysql://localhost:3306/bibliotheque_db";
     private static final String USER = "root";
     private static final String PASSWORD = "";
+    private static final Statement DatabaseConnection = null;
 
     private static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
@@ -29,8 +30,7 @@ public class LivreDAO {
         List<Livre> livres = new ArrayList<>();
         // Assurez-vous que les noms des colonnes ici correspondent EXACTEMENT à votre base de données.
         // La colonne 'date_publication' est maintenant lue comme un String.
-        // Assurez-vous d'avoir 'isbn' et 'description' dans votre table si vous voulez les lire.
-        String query = "SELECT id, titre, auteur, date_publication, theme, categorie, statut, nombre_exemplaires, description, isbn FROM livres";
+        String query = "SELECT id, titre, auteur, date_publication, theme, categorie, statut, nombre_exemplaires, description FROM livres";
 
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement();
@@ -46,8 +46,8 @@ public class LivreDAO {
                     rs.getString("categorie"),
                     rs.getString("statut"), // Maintenu comme String
                     rs.getInt("nombre_exemplaires"),
-                    rs.getString("description"),
-                    rs.getString("isbn")
+                    rs.getString("description")   
+
                 ));
             }
         }
@@ -63,7 +63,7 @@ public class LivreDAO {
     public static boolean addLivre(Livre livre) throws SQLException {
         // La requête INSERT est mise à jour pour inclure toutes les colonnes du modèle Livre (sauf l'ID qui est auto-incrémenté)
         // Vérifiez que cette liste de colonnes correspond EXACTEMENT à votre table dans la BD.
-        String query = "INSERT INTO livres (titre, auteur, date_publication, theme, categorie, statut, nombre_exemplaires, description, isbn) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO livres (titre, auteur, date_publication, theme, categorie, statut, nombre_exemplaires, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
@@ -76,8 +76,7 @@ public class LivreDAO {
             pstmt.setString(6, livre.getStatus());
             pstmt.setInt(7, livre.getNombreExemplaire());
             pstmt.setString(8, livre.getDescription());
-            pstmt.setString(9, livre.getIsbn()); // Ajout de l'ISBN
-
+         
             int rowsAffected = pstmt.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -92,5 +91,43 @@ public class LivreDAO {
         }
     }
 
-    // Vous pouvez ajouter des méthodes pour updateLivre(Livre livre), deleteLivre(int id), findLivreById(int id), etc.
+    public boolean updateLivre(Livre livre) {
+        // CORRIGÉ : Les noms de colonnes SQL doivent correspondre à ceux de votre base de données.
+        // Utilisation de snake_case pour les noms de colonnes SQL.
+        String sql = "UPDATE livres SET titre = ?, auteur = ?, date_publication = ?, theme = ?, categorie = ?, statut = ?, nombre_exemplaires = ?, description = ? WHERE id = ?";
+        try (Connection conn = getConnection(); // Utilise la méthode getConnection() interne
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, livre.getTitre());
+            stmt.setString(2, livre.getAuteur());
+            stmt.setString(3, livre.getDatePublication());
+            stmt.setString(4, livre.getTheme());
+            stmt.setString(5, livre.getCategorie());
+            stmt.setString(6, livre.getStatus());
+            stmt.setInt(7, livre.getNombreExemplaire());
+            stmt.setString(8, livre.getDescription());
+            stmt.setInt(9, livre.getId());
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la mise à jour du livre: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean deleteLivre(int id) {
+        String sql = "DELETE FROM livres WHERE id = ?";
+        try (Connection conn = getConnection(); // Utilise la méthode getConnection() interne
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            int rowsAffected = stmt.executeUpdate();
+
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la suppression du livre avec l'ID " + id + ": " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

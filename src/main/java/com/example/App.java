@@ -15,7 +15,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view/LivreView.fxml"));
         Parent root = fxmlLoader.load();
 
-        Scene scene = new Scene(root, 1200, 700);
+        Scene scene = new Scene(root, 1366, 768);
         stage.setTitle("Application de Gestion de Livres");
         stage.setScene(scene);
         stage.show();

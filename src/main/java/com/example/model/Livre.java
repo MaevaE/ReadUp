@@ -10,14 +10,13 @@ public class Livre {
     private String status;
     private int nombreExemplaire;
     private String description;
-    private String isbn; // Ajout de l'ISBN, car il est utilisé dans le contrôleur et le DAO
 
     public Livre() {
         // Constructeur par défaut
     }
 
     // Constructeur pour la création d'un nouveau livre (sans ID, car auto-généré par la BD)
-    public Livre(String titre, String auteur, String datePublication, String theme, String categorie, String status, int nombreExemplaire, String description, String isbn) {
+    public Livre(String titre, String auteur, String datePublication, String theme, String categorie, String status, int nombreExemplaire, String description) {
         this.titre = titre;
         this.auteur = auteur;
         this.datePublication = datePublication;
@@ -26,11 +25,10 @@ public class Livre {
         this.status = status;
         this.nombreExemplaire = nombreExemplaire;
         this.description = description;
-        this.isbn = isbn; // Initialisation de l'ISBN
     }
 
     // Constructeur pour récupérer un livre depuis la base de données (avec ID)
-    public Livre(int id, String titre, String auteur, String datePublication, String theme, String categorie, String status, int nombreExemplaire, String description, String isbn) {
+    public Livre(int id, String titre, String auteur, String datePublication, String theme, String categorie, String status, int nombreExemplaire, String description) {
         this.id = id;
         this.titre = titre;
         this.auteur = auteur;
@@ -40,7 +38,6 @@ public class Livre {
         this.status = status;
         this.nombreExemplaire = nombreExemplaire;
         this.description = description;
-        this.isbn = isbn;
     }
 
     // --- Getters et Setters pour chaque propriété ---
@@ -63,8 +60,6 @@ public class Livre {
     public void setNombreExemplaire(int nombreExemplaire) { this.nombreExemplaire = nombreExemplaire; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-    public String getIsbn() { return isbn; } // Getter pour l'ISBN
-    public void setIsbn(String isbn) { this.isbn = isbn; } // Setter pour l'ISBN
 
     // Optionnel : une méthode toString() pour faciliter le débogage
     @Override
@@ -79,7 +74,7 @@ public class Livre {
                ", status='" + status + '\'' +
                ", nombreExemplaire=" + nombreExemplaire +
                ", description='" + description + '\'' +
-               ", isbn='" + isbn + '\'' +
+            
                '}';
     }
 }

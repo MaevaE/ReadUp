@@ -1,0 +1,58 @@
+package com.example.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+
+    // Assurez-vous que ces informations sont correctes pour votre base de données MySQL
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/readup_db"; // Ou le nom de votre base de données
+    private static final String DB_USER = "root"; // Votre nom d'utilisateur MySQL
+    private static final String DB_PASSWORD = "root"; // Votre mot de passe MySQL
+
+    // Assurez-vous que le driver JDBC MySQL est chargé.
+    // Cela devrait être fait une seule fois au démarrage de l'application ou lors du premier appel.
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Driver JDBC MySQL chargé."); // Message de confirmation
+        } catch (ClassNotFoundException e) {
+            System.err.println("Erreur: Driver JDBC MySQL introuvable. Assurez-vous que le JAR du driver est dans le classpath.");
+            e.printStackTrace();
+            // Vous pouvez choisir de relancer l'exception ou de terminer l'application si le driver est crucial
+            // throw new RuntimeException("Impossible de charger le driver JDBC MySQL", e);
+        }
+    }
+
+    /**
+     * Établit et retourne une connexion à la base de données.
+     * @return Une instance de Connection si la connexion est réussie, sinon null.
+     */
+    public static Connection getConnection() throws SQLException { // <-- Assurez-vous que c'est bien static
+        try {
+            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+        } catch (SQLException e) {
+            System.err.println("Erreur de connexion à la base de données: " + e.getMessage());
+            e.printStackTrace();
+            throw e; // Relaunch l'exception pour que le DAO puisse la gérer
+            // Ou, si vous voulez retourner null et gérer le null plus haut:
+            // return null;
+        }
+    }
+
+    /**
+     * Méthode utilitaire pour fermer une connexion (optionnel, souvent fait dans le try-with-resources)
+     * @param connection La connexion à fermer.
+     */
+    public static void closeConnection(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.err.println("Erreur lors de la fermeture de la connexion: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+    }
+}

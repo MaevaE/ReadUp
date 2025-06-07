@@ -50,7 +50,7 @@
 
 /* Styles pour le panneau principal de contenu (le grand espace bleu foncé à droite) */
 .main-content-pane {
-    -fx-background-color: #cccccc; 
+    -fx-background-color: #FFFFFF; 
     -fx-margin:50%
 
 }
@@ -114,7 +114,7 @@
 
 /* Styles des boutons Ajouter, Supprimer, Modifier (TOUS bleus, comme demandé) */
 .action-button {
-    -fx-background-color: #3498db; /* Un bleu vif, cohérent */
+    -fx-background-color: #3A86FF; /* Un bleu vif, cohérent */
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
@@ -123,7 +123,7 @@
 }
 
 .action-button:hover {
-    -fx-background-color: #2980b9; /* Un bleu légèrement plus foncé au survol */
+    -fx-background-color: #05609c; /* Un bleu légèrement plus foncé au survol */
 }
 
 /* Effet d'ombre pour les cadres (formulaire et table) */
@@ -134,9 +134,11 @@
 /* Styles pour la TableView (la liste des livres) */
 .table-view {
     -fx-background-color: #1E1E2F; /* MAJ : Fond bleu foncé pour la table */
-    -fx-border-color: none;
+    -fx-border-color: #101010;
+    -fx-table-cell-border-color: #101010;
     -fx-border-radius: 5px;
-
+    -fx-border: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 0, 0); 
 }
 
 /* Styles de l'en-tête de la table (les titres des colonnes) */
@@ -172,8 +174,8 @@
     -fx-border-width: 0 0 1px 0;
     -fx-border-radius: 20px; /* Pas de coins arrondis pour le trait */
     -fx-padding: 5px 10px;
-    -fx-text-fill: rgb(0, 0, 0, 0.3); /* Texte blanc */
-    -fx-prompt-text-fill: #bbbbbb; /* Texte de prompt gris clair */
+    -fx-text-fill: rgba(0, 0, 0, 0.832); /* Texte blanc */
+    -fx-prompt-text-fill: #0d0d0d; /* Texte de prompt gris clair */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 3, 0, 0, 1); /* Ombre légère */
 }
 
