@@ -80,8 +80,8 @@ private Label titleLabel;
 
     @FXML
     private void goToLivres() {
-        //setContent("/fxml/Livres.fxml");
-        //titleLabel.setText("Emprunter / Retourner");
+        setContent("/fxml/Livres.fxml");
+         titleLabel.setText("Informtion sur les livres");
     }
 
     @FXML
@@ -94,6 +94,12 @@ private Label titleLabel;
     private void goToAbout() {
        setContent("/fxml/About.fxml");
        titleLabel.setText("A Propos");
+    }
+
+        @FXML
+    private void goToEmpruntRetour() {
+      setContent("/fxml/EmpruntRetour.fxml");
+      titleLabel.setText("Emprunter/Retourner");
     }
 
     

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.bibliotheque.app.controller.EmpruntFormController"
+      alignment="CENTER" 
+      spacing="40" style='-fx-background-color: #1E1E2F ; -fx-padding: 20; ' prefWidth="500" prefHeight="400" >
+      <padding>
+    <Insets top="10" right="10" bottom="10" left="10"/>
+      </padding>
+
+
+    <Label text="Formulaire d'Emprunt" style="-fx-font-size: 18px; -fx-font-weight: bold;-fx-text-fill: white;"/>
+
+    <HBox spacing="18">
+        <Label text="Livre disponible :"  style="-fx-text-fill: white;"/> 
+        <ComboBox fx:id="comboBoxLivre" prefWidth="300"  style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
+    </HBox>
+
+    <HBox spacing="30">
+        <Label text="Utilisateur :"   style="-fx-text-fill: white;"/>
+        <ComboBox fx:id="comboBoxUtilisateur" prefWidth="300"  style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
+    </HBox>
+
+    <HBox spacing="17">
+        <Label text="Date d'emprunt :"  style="-fx-text-fill: white;"/>
+        <DatePicker fx:id="datePickerEmprunt" style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Label text="Date retour prévue :"  style="-fx-text-fill: white;"/>
+        <DatePicker fx:id="datePickerRetour"  style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
+    </HBox>
+
+    <Button fx:id="btnValiderEmprunt"
+            text="Valider l'emprunt"
+            onAction="#handleValiderEmprunt"
+            style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 170px"/>
+
+</VBox>
+
+

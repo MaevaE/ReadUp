@@ -56,7 +56,7 @@
 
 
             
-            <Button onAction="#goToLivres"  prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="EmpruntButton">
+            <Button onAction="#goToEmpruntRetour"  prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="EmpruntButton">
                 <graphic>
                     <HBox alignment="CENTER_LEFT" spacing="10">
                        <FontIcon iconLiteral="fas-archive" iconSize="24"  iconColor="white"/>
@@ -76,7 +76,7 @@
             </Button>
 
 
-              <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="LivreButton" >
+              <Button  onAction="#goToLivres" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="LivreButton" >
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
                              <FontIcon iconLiteral="fas-book" iconSize="24"  iconColor="white"/>

@@ -10,6 +10,12 @@ public class UtilisateursModel {
 
     public UtilisateursModel() {}
 
+    public UtilisateursModel(int id, String nom) {
+    this.id = id;
+    this.nom = nom;
+}
+
+
     public UtilisateursModel(int id, String nom, String prenom, String email, String numero_telephone, String adresse) {
         this.id = id;
         this.nom = nom;
@@ -37,4 +43,10 @@ public class UtilisateursModel {
 
     public String getAdresse() { return adresse; }
     public void setAdresse(String adresse) { this.adresse = adresse; }
+
+    @Override
+public String toString() {
+    return nom; // Ou nom + " " + prenom si tu veux afficher les deux
+}
+
 }
