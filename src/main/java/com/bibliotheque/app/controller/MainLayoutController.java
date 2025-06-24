@@ -12,6 +12,7 @@ import java.io.IOException;
 import javafx.scene.control.*;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.scene.image.ImageView;
 
 
 
@@ -37,6 +38,8 @@ public class MainLayoutController {
     private Button ParametreButton;
     @FXML
 private Label titleLabel;
+@FXML
+private ImageView welcomeImage;
 
 
 
@@ -44,7 +47,8 @@ private Label titleLabel;
     //action de click sur les boutons de la home
     public void initialize() {
 
-
+        contentPane.getChildren().clear();
+        contentPane.getChildren().add(welcomeImage);
                    
         
         DashboardButton.setOnMousePressed(e -> DashboardButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));

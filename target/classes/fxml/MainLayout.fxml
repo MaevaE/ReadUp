@@ -110,7 +110,17 @@
     </left>
 
     <!-- Contenu dynamique -->
-    <center>
-        <StackPane fx:id="contentPane" />
-    </center>
+   <center>
+    <StackPane fx:id="contentPane">
+        <ImageView fx:id="welcomeImage"
+                   fitWidth="900"
+                   fitHeight="500"
+                   preserveRatio="true"
+                   >
+            <image>
+                <Image url="/images/209320607_10991988.jpg"/>
+            </image>
+        </ImageView>
+    </StackPane>
+</center>
 </BorderPane>

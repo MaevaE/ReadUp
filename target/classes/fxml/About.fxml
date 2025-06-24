@@ -38,7 +38,7 @@
         <Text text=" - Zidane (développeuse,Interface graphique)" style="-fx-fill: white; -fx-font-size: 14px;" />
         <Text text=" - Ange (Test et documentation)" style="-fx-fill: white; -fx-font-size: 14px;" />
         <Text text=" - Muscade (Tests et documentation)" style="-fx-fill: white; -fx-font-size: 14px;" />
-        <Text text=" - Muscade (conception de la DB)" style="-fx-fill: white; -fx-font-size: 14px;" />
+        <Text text=" - Slovoto (conception de la DB)" style="-fx-fill: white; -fx-font-size: 14px;" />
 
         
         <!-- Technologies -->

@@ -1,6 +1,8 @@
 package com.bibliotheque.app.controller;
 
 import com.bibliotheque.app.dao.LivresDao;
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import com.bibliotheque.app.model.LivresModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -200,10 +202,14 @@ private void handleModifierLivre(ActionEvent event) {
                 livresDao.supprimerLivre(livre.getId());
                 livresData.remove(livre);
                 tableLivre.refresh();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+             } catch (SQLIntegrityConstraintViolationException e) {
+            afficherAlerte("Suppression impossible", "Ce livre est encore emprunté. Veuillez d'abord supprimer les emprunts associés.");
+        } catch (SQLException e) {
+            afficherAlerte("Erreur base de données", "Une erreur est survenue : " + e.getMessage());
         }
+         } else {
+        afficherAlerte("Aucun livre sélectionné", "Veuillez sélectionner un livre à supprimer.");
+    }
     }
 
     @FXML

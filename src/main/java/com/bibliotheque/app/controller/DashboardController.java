@@ -1,26 +1,41 @@
 package com.bibliotheque.app.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.StackPane;
+import javafx.scene.Node;
 
 public class DashboardController {
 
     @FXML
-    private Label livresDispoLabel;
+    private StackPane contentPane;
+
+    public void afficherLivres() {
+        chargerVue("/fxml/livres.fxml");
+    }
+
+    public void afficherEmprunts() {
+        chargerVue("/fxml/emprunts.fxml");
+    }
+
+    public void afficherRetours() {
+        chargerVue("/fxml/retours.fxml");
+    }
 
     @FXML
-    private Label utilisateursLabel;
-
-    @FXML
-    private Label empruntsLabel;
-    
-
     public void initialize() {
-        // Exemple de valeurs dynamiques (à remplacer par des requêtes à ta base de données)
-        livresDispoLabel.setText("120");
-        utilisateursLabel.setText("45");
-        empruntsLabel.setText("30");
+          
+        chargerVue("/fxml/livres.fxml");
+    
+    }
 
-        
+    private void chargerVue(String cheminFxml) {
+        try {
+            Node node = FXMLLoader.load(getClass().getResource(cheminFxml));
+            contentPane.getChildren().setAll(node);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
+

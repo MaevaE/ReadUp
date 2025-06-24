@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import com.bibliotheque.app.controller.LivresController?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml"  fx:controller="com.bibliotheque.app.controller.livreC">
+   <TableView fx:id="tableLivres"
+                       VBox.vgrow="ALWAYS"
+                        prefHeight="350"
+                       style="-fx-background-color: #1E1E2F;
+                              -fx-text-fill: white;
+                              -fx-control-inner-background:rgb(54, 54, 85);
+                              -fx-table-cell-border-color: transparent;
+                              -fx-selection-bar:rgb(102, 102, 155);
+                              -fx-selection-bar-text: white;">
+
+                <columns>
+                    <TableColumn fx:id="colTitres" text="Titre" prefWidth="250"/>
+                    <TableColumn fx:id="colAuteurs" text="Auteur" prefWidth="170"/>
+                    <TableColumn fx:id="colThemes" text="Thème" prefWidth="170"/>
+                    <TableColumn fx:id="colDatePublications" text="Date publication" prefWidth="170"/>
+                    <TableColumn fx:id="colNombreExemplairess" text="Exemplaires" prefWidth="170"/>
+                    <TableColumn fx:id="colDisponibilites" text="Disponibilité" prefWidth="170"/>
+
+                </columns>
+            </TableView>
+</VBox>

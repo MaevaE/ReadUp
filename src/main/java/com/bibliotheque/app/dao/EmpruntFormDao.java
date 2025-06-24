@@ -136,6 +136,23 @@ public static List<OptionLivre> getLivresDisponiblesAvecId() {
     return list;
 }
 
+public boolean estEncoreEmprunte(int idLivre) {
+    String sql = """
+        SELECT COUNT(*) FROM emprunts 
+        WHERE id_livre = ? AND id NOT IN (SELECT id_emprunt FROM retours)
+    """;
+    try (Connection conn = Database.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, idLivre);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            return rs.getInt(1) > 0; // encore emprunté
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return true;
+}
 
 
 

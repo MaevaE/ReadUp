@@ -20,13 +20,15 @@
     <HBox spacing="10" alignment="CENTER">
         <Button fx:id="btnEmprunter"
                 text="Emprunter"
+                prefHeight="100"
                 onAction="#handleEmprunter"
-                style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 400px"/>
+                style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px"/>
 
         <Button fx:id="btnRetourner"
                 text="Retourner"
+                prefHeight="100"
                 onAction="#handleRetourner"
-               style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 400px"/>
+               style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px"/>
     </HBox>
 
     <!-- Zone dynamique où les formulaires seront chargés -->
