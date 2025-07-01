@@ -10,9 +10,9 @@
       fx:controller="com.bibliotheque.app.controller.AboutController"
       alignment="CENTER"
       spacing="10"
-      style="-fx-background-color:  #1E1E2F; -fx-padding: 20;">
+      style="-fx-background-color:  #2C2C4A; -fx-padding: 20;">
     
-    <VBox spacing="8" style="-fx-background-color: #1E1E2F; -fx-padding: 20;" alignment="CENTER">
+    <VBox spacing="8" style="-fx-background-color: #2C2C4A; -fx-padding: 20;" alignment="CENTER">
         
         <!-- Titre -->
         <Label text="À propos de ReadUp"

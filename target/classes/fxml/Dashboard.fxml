@@ -11,7 +11,7 @@
             xmlns="http://javafx.com/javafx/17"
             fx:controller="com.bibliotheque.app.controller.DashboardController"
             prefWidth="800" prefHeight="600"
-            
+            style="-fx-background-color:rgb(240, 247, 253);-fx-padding: 20;"
             >
 
    

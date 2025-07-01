@@ -3,21 +3,54 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.bibliotheque.app.controller.UtilisateursController"  xmlns="http://javafx.com/javafx/17"
+<VBox xmlns:fx="http://javafx.com/fxml" xmlns:ikonli="http://kordamp.org/ikonli/javafx" fx:controller="com.bibliotheque.app.controller.UtilisateursController"  xmlns="http://javafx.com/javafx/17"
        alignment="TOP_LEFT"
-       spacing="10"
-      style="-fx-background-color:rgb(235, 235, 238);-fx-padding: 20;">
+       spacing="30"
+      style="-fx-background-color:rgb(240, 247, 253);-fx-padding: 20;">
 
-      <HBox  alignment="CENTER_RIGHT" spacing="10">
-      <TextField fx:id="champRecherche" promptText="Rechercher un utilisateur..."  style="-fx-pref-width: 400px;-fx-font-size: 14px; -fx-pref-height: 30px;"/>
-      <Button  fx:id="btnRefresh" text="Rafraichir" onAction="#handleRefresh" style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"        />
+      <HBox  alignment="CENTER" spacing="10">
+      <HBox spacing="10" alignment="CENTER" style="-fx-pref-height: 20px;
+                   -fx-border-width: 1;
+                   -fx-border-radius: 30;
+                   -fx-border-color: rgb(231, 232, 233);
+                   -fx-background-radius: 30;-fx-background-color: white;-fx-padding:9px;">
+      <TextField fx:id="champRecherche" promptText="Rechercher un utilisateur..."  style="
+                   -fx-padding: 0 0 0 10;
+               -fx-font-size: 14px;
+               -fx-pref-width: 400px;
+               -fx-pref-height: 10px;
+               -fx-background-color: transparent;
+               -fx-border-width: 2;
+               -fx-border-color: transparent;
+               -fx-background-radius: 17;
+               -fx-border-radius: 17;
+               -fx-focus-color: transparent;
+               -fx-faint-focus-color: transparent;"/>
+       <!-- Icône positionnée par-dessus le TextField -->
+      <FontIcon iconLiteral="fas-filter" iconColor="#999999" iconSize="15"/>
+      </HBox>
+      <Button  fx:id="btnRefresh" onAction="#handleRefresh" style="-fx-background-color: #3498db;-fx-text-fill: white; -fx-pref-width: 40px;-fx-border-radius: 30;
+                   -fx-border-color:  #3498db;
+                   -fx-background-radius: 20;-fx-padding:5px;"  >
+             <graphic>
+                    <FontIcon iconLiteral="fas-sync"
+                        iconSize="14"
+                        
+                        iconColor="white"
+                        />
+                    
+                    
+              </graphic>
+      </Button>
       </HBox>
 
-    <HBox  style="-fx-background-color:rgb(235, 235, 238); -fx-padding: 10;" alignment="CENTER"  prefHeight="900">
+    <HBox  style="-fx-background-color:rgb(241, 246, 250) -fx-padding: 10;" alignment="CENTER"  prefHeight="900">
 
       <!--FORMULAIRE DES CLIENTS-->
-        <VBox spacing="40" style='-fx-background-color: #1E1E2F ; -fx-padding: 20; ' prefWidth="500" prefHeight="550">
+        <VBox spacing="40" style="-fx-background-color: 	#4C4C7F; -fx-padding: 20; -fx-border-radius: 10 0 0 10;-fx-border-color:  #3498db;-fx-background-radius: 10 0 0 10;" prefWidth="500" prefHeight="700">
 
         <TextField fx:id="txtNom" promptText="Noms" style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
         <TextField fx:id="txtPrenom" promptText="Prenoms" style="-fx-background-color: transparent;-fx-text-fill: white;-fx-prompt-text-fill: white;-fx-border-color: transparent transparent white transparent;-fx-border-width: 0 0 1 0;-fx-font-size: 14px; -fx-pref-width: 400px"/>
@@ -27,9 +60,9 @@
         
 
         <HBox spacing="10" alignment="CENTER">
-        <Button fx:id="btnAjouter" text="Ajouter" onAction="#handleAjouterUtilisateur" style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"/>
-        <Button fx:id="btnModifier" text="Modifier" onAction="#handleModifierUtilisateur" style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"/>
-        <Button fx:id="btnSupprimer" text="Supprimer" onAction="#handleSupprimerUtilisateur" style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"/>
+        <Button fx:id="btnAjouter" text="Ajouter" onAction="#handleAjouterUtilisateur" style="-fx-background-color:rgb(32, 168, 4);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px; -fx-border-radius: 10;-fx-background-radius: 10;-fx-font-weight: bold;"/>
+        <Button fx:id="btnModifier" text="Modifier" onAction="#handleModifierUtilisateur" style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;-fx-font-weight: bold;"/>
+        <Button fx:id="btnSupprimer" text="Supprimer" onAction="#handleSupprimerUtilisateur" style="-fx-background-color:rgb(219, 14, 7);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;-fx-font-weight: bold;"/>
         </HBox>
         
 
@@ -39,8 +72,7 @@
     <!--tableau de visualisation des clients  -->
     <VBox spacing="10"
       alignment="CENTER"
-      style="-fx-background-color:rgb(45, 45, 71); -fx-padding: 20;"
-      prefWidth="700" prefHeight="550">
+      style="-fx-background-color: #2C2C4A; -fx-padding: 10; -fx-border-radius: 0 10 10 0;-fx-border-color:  #3498db;-fx-background-radius: 0 10 10 0;" prefWidth="700" prefHeight="700">
 
 
     <TableView fx:id="tableUtilisateur"

@@ -47,14 +47,14 @@ public class LivresController {
     @FXML
     public void initialize() {
         // Style des boutons
-        btnAjouter.setOnMousePressed(e -> btnAjouter.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnAjouter.setOnMouseReleased(e -> btnAjouter.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnSupprimer.setOnMousePressed(e -> btnSupprimer.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnSupprimer.setOnMouseReleased(e -> btnSupprimer.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnModifier.setOnMousePressed(e -> btnModifier.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnModifier.setOnMouseReleased(e -> btnModifier.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnRefresh.setOnMousePressed(e -> btnRefresh.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"));
-        btnRefresh.setOnMouseReleased(e -> btnRefresh.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"));
+        btnAjouter.setOnMousePressed(e -> btnAjouter.setStyle("-fx-background-color:rgb(21, 114, 2);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnAjouter.setOnMouseReleased(e -> btnAjouter.setStyle("-fx-background-color: rgb(32, 168, 4);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnSupprimer.setOnMousePressed(e -> btnSupprimer.setStyle("-fx-background-color:rgb(150, 7, 2);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnSupprimer.setOnMouseReleased(e -> btnSupprimer.setStyle("-fx-background-color: rgb(219, 14, 7);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnModifier.setOnMousePressed(e -> btnModifier.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnModifier.setOnMouseReleased(e -> btnModifier.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnRefresh.setOnMousePressed(e -> btnRefresh.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white; -fx-pref-width: 40px;-fx-border-radius: 30;-fx-border-color:  #3498db;-fx-background-radius: 20;-fx-padding:5px;"));
+        btnRefresh.setOnMouseReleased(e -> btnRefresh.setStyle("-fx-background-color: #3498db;-fx-text-fill: white; -fx-pref-width: 40px;-fx-border-radius: 30;-fx-border-color:  #3498db; -fx-background-radius: 20;-fx-padding:5px;"));
 
         // Double clic pour remplir les champs
         tableLivre.setOnMouseClicked(event -> {
@@ -96,7 +96,11 @@ public class LivresController {
         filteredList = new FilteredList<>(livresData, p -> true);
         tableLivre.setItems(filteredList);
 
-        champRecherche.textProperty().addListener((obs, oldVal, newVal) -> filtrerLivres(newVal));
+         // Écoute les changements dans le champ de recherche
+    champRecherche.textProperty().addListener((observable, oldValue, newValue) -> {
+        filtrerLivres(newValue);
+    });
+    
     }
 
     private void chargerLivres() {
@@ -108,16 +112,25 @@ public class LivresController {
         }
     }
 
-    private void filtrerLivres(String filtre) {
-        filteredList.setPredicate(livre -> {
-            if (filtre == null || filtre.isEmpty()) return true;
-            String filtreLower = filtre.toLowerCase();
-            return 
-                   livre.getAuteur().toLowerCase().contains(filtreLower) ||
-                   livre.getTheme().toLowerCase().contains(filtreLower) ||
-                   String.valueOf(livre.getDatePublication().getYear()).contains(filtreLower);
-        });
-    }
+  
+  @FXML
+private void filtrerLivres(String filtre) {
+    filteredList.setPredicate(livre -> {
+        if (filtre == null || filtre.isEmpty()) {
+            return true;
+        }
+        String filtreLower = filtre.toLowerCase();
+
+        return livre.getTitre().toLowerCase().contains(filtreLower) ||
+               livre.getAuteur().toLowerCase().contains(filtreLower) ||
+               livre.getTheme().toLowerCase().contains(filtreLower) ||
+               String.valueOf(livre.getDatePublication().getYear()).contains(filtreLower) ||
+               String.valueOf(livre.getNombreExemplaires()).contains(filtreLower) ||
+               livre.getDisponibilite().toLowerCase().contains(filtreLower);
+    });
+}
+
+
 
         
     @FXML

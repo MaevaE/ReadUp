@@ -45,7 +45,7 @@
          
 
 
-            <Button prefWidth="270" prefHeight="50" onAction="#goToDashboard" style="-fx-background-color: #3A86FF;" fx:id="DashboardButton" >
+            <Button prefWidth="270" prefHeight="50" onAction="#goToDashboard" style="-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="DashboardButton" >
                 <graphic>
                 <HBox alignment="CENTER_LEFT" spacing="10">
                  <FontIcon iconLiteral="fas-tachometer-alt" iconSize="24" iconColor="white"/>
@@ -56,7 +56,7 @@
 
 
             
-            <Button onAction="#goToEmpruntRetour"  prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="EmpruntButton">
+            <Button onAction="#goToEmpruntRetour"  prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="EmpruntButton">
                 <graphic>
                     <HBox alignment="CENTER_LEFT" spacing="10">
                        <FontIcon iconLiteral="fas-archive" iconSize="24"  iconColor="white"/>
@@ -66,7 +66,7 @@
             </Button>
 
 
-            <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="ClientButton">
+            <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="ClientButton">
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
                              <FontIcon iconLiteral="fas-users" iconSize="24" iconColor="white" />
@@ -76,7 +76,7 @@
             </Button>
 
 
-              <Button  onAction="#goToLivres" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="LivreButton" >
+              <Button  onAction="#goToLivres" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="LivreButton" >
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
                              <FontIcon iconLiteral="fas-book" iconSize="24"  iconColor="white"/>
@@ -86,7 +86,7 @@
             </Button>
 
 
-              <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="ParametreButton">
+              <Button  onAction="#goToUtilisateurs" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="ParametreButton">
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
                              <FontIcon iconLiteral="fas-cog" iconSize="24" iconColor="white" />
@@ -96,7 +96,7 @@
             </Button>
 
 
-             <Button  onAction="#goToAbout" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;" fx:id="AboutButton">
+             <Button  onAction="#goToAbout" prefWidth="270" prefHeight="50"  style="-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);" fx:id="AboutButton">
                         <graphic>
                           <HBox alignment="CENTER_LEFT" spacing="10">
                              <FontIcon iconLiteral="fas-info-circle" iconSize="24" iconColor="white" />

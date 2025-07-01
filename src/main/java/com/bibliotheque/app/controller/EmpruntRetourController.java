@@ -28,10 +28,10 @@ public class EmpruntRetourController {
     private void initialize() {
          
         chargerFormulaire("EmpruntForm.fxml");
-        btnEmprunter.setOnMousePressed(e -> btnEmprunter.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 400px"));
-        btnEmprunter.setOnMouseReleased(e -> btnEmprunter.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 400px"));
-        btnRetourner.setOnMousePressed(e -> btnRetourner.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 400px"));
-        btnRetourner.setOnMouseReleased(e -> btnRetourner.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 400px"));
+        btnEmprunter.setOnMousePressed(e -> btnEmprunter.setStyle("-fx-background-color:rgb(16, 42, 87);fx-border-radius: 10;-fx-background-radius: 10;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px;"));
+        btnEmprunter.setOnMouseReleased(e -> btnEmprunter.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 10;-fx-background-radius: 10;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px;"));
+        btnRetourner.setOnMousePressed(e -> btnRetourner.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;fx-border-radius: 10;-fx-background-radius: 10;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px;"));
+        btnRetourner.setOnMouseReleased(e -> btnRetourner.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 10;-fx-background-radius: 10;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px;"));
         // Charger l'emprunt par défaut ou rien
     }
 

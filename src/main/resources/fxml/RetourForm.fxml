@@ -8,7 +8,7 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.bibliotheque.app.controller.RetourFormController"
       alignment="CENTER" 
-      spacing="40" style='-fx-background-color: #1E1E2F ; -fx-padding: 20; ' prefWidth="500" prefHeight="400">
+      spacing="40" style="-fx-background-color: 	#4C4C7F; -fx-padding: 20; -fx-border-radius: 10 0 0 10;-fx-border-color:  #3498db;-fx-background-radius: 10 0 0 10;" prefWidth="500" prefHeight="400">
       <padding>
     <Insets top="10" right="10" bottom="10" left="10"/>
         </padding>
@@ -28,7 +28,7 @@
     <Button fx:id="btnValiderRetour"
             text="Valider le retour"
             onAction="#handleValiderRetour"
-            style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 110px"/>
+            style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 170px"/>
 
 </VBox>
 

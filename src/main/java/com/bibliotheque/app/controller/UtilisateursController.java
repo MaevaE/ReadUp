@@ -62,14 +62,14 @@ public class UtilisateursController {
     @FXML
     public void initialize() {
 
-        btnAjouter.setOnMousePressed(e -> btnAjouter.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnAjouter.setOnMouseReleased(e -> btnAjouter.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnSupprimer.setOnMousePressed(e -> btnSupprimer.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnSupprimer.setOnMouseReleased(e -> btnSupprimer.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnModifier.setOnMousePressed(e -> btnModifier.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnModifier.setOnMouseReleased(e -> btnModifier.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 80px"));
-        btnRefresh.setOnMousePressed(e -> btnRefresh.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"));
-        btnRefresh.setOnMouseReleased(e -> btnRefresh.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 90px"));
+        btnAjouter.setOnMousePressed(e -> btnAjouter.setStyle("-fx-background-color:rgb(21, 114, 2);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnAjouter.setOnMouseReleased(e -> btnAjouter.setStyle("-fx-background-color: rgb(32, 168, 4);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnSupprimer.setOnMousePressed(e -> btnSupprimer.setStyle("-fx-background-color:rgb(150, 7, 2);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnSupprimer.setOnMouseReleased(e -> btnSupprimer.setStyle("-fx-background-color: rgb(219, 14, 7);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnModifier.setOnMousePressed(e -> btnModifier.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnModifier.setOnMouseReleased(e -> btnModifier.setStyle("-fx-background-color: #3A86FF;-fx-text-fill: white;-fx-font-size: 14px; -fx-pref-width: 95px;-fx-border-radius: 10;-fx-background-radius: 10;"));
+        btnRefresh.setOnMousePressed(e -> btnRefresh.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-text-fill: white; -fx-pref-width: 40px;-fx-border-radius: 30;-fx-border-color:  #3498db;-fx-background-radius: 20;-fx-padding:5px;"));
+        btnRefresh.setOnMouseReleased(e -> btnRefresh.setStyle("-fx-background-color: #3498db;-fx-text-fill: white; -fx-pref-width: 40px;-fx-border-radius: 30;-fx-border-color:  #3498db; -fx-background-radius: 20;-fx-padding:5px;"));
 
 
 
@@ -120,6 +120,15 @@ public class UtilisateursController {
 
 
 
+        private boolean estEmailValide(String email) {
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        return email != null && email.matches(regex);
+        }
+         private boolean estNumeroCamerounaisValide(String numero) {
+        String regex = "^(\\+237|00237)?6[0-9]{8}$";
+        return numero != null && numero.matches(regex);
+        }
+
 
     @FXML
     private void handleAjouterUtilisateur(ActionEvent event) {
@@ -128,6 +137,8 @@ public class UtilisateursController {
         String email = txtEmail.getText();
         String numero_telephone = txtNumTelephone.getText();
         String adresse = txtAdresse.getText();
+
+
 
         if (nom.isEmpty() || prenom.isEmpty()) {
             // afficher une alerte d'erreur ici si tu veux
@@ -140,6 +151,24 @@ public class UtilisateursController {
         utilisateur.setEmail(email);
         utilisateur.setNumTelephone(numero_telephone);
         utilisateur.setAdresse(adresse);
+
+         // Vérifie l'email
+        if (!estEmailValide(utilisateur.getEmail())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Email invalide");
+            alert.setContentText("L'adresse email de l'utilisateur est invalide.");
+            alert.show();
+            return; // Arrête l'exécution ici
+        }
+                // Vérifie le téléphone
+        if (!estNumeroCamerounaisValide(utilisateur.getNumTelephone())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Numéro invalide");
+            alert.setContentText("Le numéro de téléphone n'est pas un numéro valide.");
+            alert.show();
+            return;
+        }
+
 
         try {
             utilisateursDao.ajouterUtilisateur(utilisateur);

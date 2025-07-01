@@ -46,23 +46,36 @@ private ImageView welcomeImage;
     @FXML
     //action de click sur les boutons de la home
     public void initialize() {
-
-        contentPane.getChildren().clear();
-        contentPane.getChildren().add(welcomeImage);
+        setContent("/fxml/Dashboard.fxml");
+         titleLabel.setText("Dashboard");
+        
                    
         
-        DashboardButton.setOnMousePressed(e -> DashboardButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
-        DashboardButton.setOnMouseReleased(e -> DashboardButton.setStyle("-fx-background-color: #3A86FF;"));
-        LivreButton.setOnMousePressed(e -> LivreButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
-        LivreButton.setOnMouseReleased(e -> LivreButton.setStyle("-fx-background-color: #3A86FF;"));
-        ClientButton.setOnMousePressed(e -> ClientButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
-        ClientButton.setOnMouseReleased(e -> ClientButton.setStyle("-fx-background-color: #3A86FF;"));
-        EmpruntButton.setOnMousePressed(e -> EmpruntButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
-        EmpruntButton.setOnMouseReleased(e -> EmpruntButton.setStyle("-fx-background-color: #3A86FF;"));
-        AboutButton.setOnMousePressed(e -> AboutButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
-        AboutButton.setOnMouseReleased(e -> AboutButton.setStyle("-fx-background-color: #3A86FF;"));
-        ParametreButton.setOnMousePressed(e -> ParametreButton.setStyle("-fx-background-color:rgb(16, 42, 87);"));
-        ParametreButton.setOnMouseReleased(e -> ParametreButton.setStyle("-fx-background-color: #3A86FF;"));
+    // Ajouter un effet au survol (hover)
+        DashboardButton.setOnMouseEntered(e -> {DashboardButton.setStyle("-fx-background-color:rgb(24, 60, 122);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        DashboardButton.setOnMouseExited(e -> { DashboardButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        DashboardButton.setOnMousePressed(e -> DashboardButton.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        DashboardButton.setOnMouseReleased(e -> DashboardButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        LivreButton.setOnMouseEntered(e -> {LivreButton.setStyle("-fx-background-color:rgb(24, 60, 122);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        LivreButton.setOnMouseExited(e -> { LivreButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        LivreButton.setOnMousePressed(e -> LivreButton.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        LivreButton.setOnMouseReleased(e -> LivreButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        ClientButton.setOnMousePressed(e -> ClientButton.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        ClientButton.setOnMouseEntered(e -> {ClientButton.setStyle("-fx-background-color:rgb(24, 60, 122);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        ClientButton.setOnMouseExited(e -> { ClientButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        ClientButton.setOnMouseReleased(e -> ClientButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        EmpruntButton.setOnMousePressed(e -> EmpruntButton.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        EmpruntButton.setOnMouseEntered(e -> {EmpruntButton.setStyle("-fx-background-color:rgb(24, 60, 122);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        EmpruntButton.setOnMouseExited(e -> { EmpruntButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        EmpruntButton.setOnMouseReleased(e -> EmpruntButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        AboutButton.setOnMouseEntered(e -> {AboutButton.setStyle("-fx-background-color:rgb(24, 60, 122);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        AboutButton.setOnMouseExited(e -> { AboutButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        AboutButton.setOnMousePressed(e -> AboutButton.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        AboutButton.setOnMouseReleased(e -> AboutButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        ParametreButton.setOnMouseEntered(e -> {ParametreButton.setStyle("-fx-background-color:rgb(24, 60, 122);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        ParametreButton.setOnMouseExited(e -> { ParametreButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);");});
+        ParametreButton.setOnMousePressed(e -> ParametreButton.setStyle("-fx-background-color:rgb(16, 42, 87);-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
+        ParametreButton.setOnMouseReleased(e -> ParametreButton.setStyle("-fx-background-color: #3A86FF;-fx-border-radius: 20;-fx-background-radius: 20;-fx-effect: dropshadow(gaussian, rgba(114, 112, 112, 0.75), 10, 0.5, 0, 2);"));
     }
 
 

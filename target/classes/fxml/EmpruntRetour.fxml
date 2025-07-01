@@ -8,7 +8,9 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.bibliotheque.app.controller.EmpruntRetourController"
       spacing="10" 
-      alignment="CENTER">
+      alignment="CENTER"
+      style="-fx-background-color:rgb(240, 247, 253);-fx-padding: 20;"
+      >
      <padding>
     <Insets top="10" right="10" bottom="10" left="10"/>
      </padding>
@@ -20,21 +22,22 @@
     <HBox spacing="10" alignment="CENTER">
         <Button fx:id="btnEmprunter"
                 text="Emprunter"
-                prefHeight="100"
+                prefHeight="80"
                 onAction="#handleEmprunter"
-                style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px"/>
+                style="-fx-background-color: #3A86FF;-fx-border-radius: 10;-fx-background-radius: 10;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px;"
+                />
 
         <Button fx:id="btnRetourner"
                 text="Retourner"
-                prefHeight="100"
+                prefHeight="80"
                 onAction="#handleRetourner"
-               style="-fx-background-color: #3498db;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px"/>
+               style="-fx-background-color: #3A86FF;-fx-border-radius: 10;-fx-background-radius: 10;-fx-text-fill: white;-fx-font-size: 20px; -fx-pref-width: 400px;"/>
     </HBox>
 
     <!-- Zone dynamique où les formulaires seront chargés -->
     <VBox fx:id="container"
           spacing="10"
-          style="-fx-border-color: lightgray; -fx-border-width: 1;"/>
+          style="-fx-border-color: lightgray; -fx-border-width: 1;-fx-border-radius: 10;-fx-background-radius: 10;"/>
           
 </VBox>
 
